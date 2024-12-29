@@ -33,11 +33,8 @@
             Guna.UI2.WinForms.Guna2Button btnBack;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnMinSize = new Guna.UI2.WinForms.Guna2Button();
             this.btnMaxSize = new Guna.UI2.WinForms.Guna2Button();
             this.Filter = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -46,17 +43,14 @@
             this.lbCancel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtPeople = new Guna.UI2.WinForms.Guna2TextBox();
             this.nUDItem = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtNoteBill = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtTotal = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dtgvBillCus = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QUANTITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DELETE = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.txtTable = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnMenu = new Guna.UI2.WinForms.Guna2Button();
             btnClose = new Guna.UI2.WinForms.Guna2Button();
             btnBack = new Guna.UI2.WinForms.Guna2Button();
             this.PanelBillCus.SuspendLayout();
@@ -167,6 +161,7 @@
             this.Filter.Name = "Filter";
             this.Filter.Size = new System.Drawing.Size(211, 36);
             this.Filter.TabIndex = 54;
+            this.Filter.SelectedIndexChanged += new System.EventHandler(this.Filter_SelectedIndexChanged);
             // 
             // FlowMenu
             // 
@@ -190,7 +185,7 @@
             this.PanelBillCus.Controls.Add(this.lbCancel);
             this.PanelBillCus.Controls.Add(this.txtPeople);
             this.PanelBillCus.Controls.Add(this.nUDItem);
-            this.PanelBillCus.Controls.Add(this.guna2TextBox1);
+            this.PanelBillCus.Controls.Add(this.txtNoteBill);
             this.PanelBillCus.Controls.Add(this.guna2HtmlLabel5);
             this.PanelBillCus.Controls.Add(this.txtTotal);
             this.PanelBillCus.Controls.Add(this.dtgvBillCus);
@@ -213,9 +208,10 @@
             this.lbCancel.ForeColor = System.Drawing.Color.White;
             this.lbCancel.Location = new System.Drawing.Point(310, 28);
             this.lbCancel.Name = "lbCancel";
-            this.lbCancel.Size = new System.Drawing.Size(47, 22);
+            this.lbCancel.Size = new System.Drawing.Size(39, 17);
             this.lbCancel.TabIndex = 53;
             this.lbCancel.Text = "Cancel";
+            this.lbCancel.Click += new System.EventHandler(this.lbCancel_Click);
             // 
             // txtPeople
             // 
@@ -251,27 +247,28 @@
             this.nUDItem.TabIndex = 51;
             this.nUDItem.UpDownButtonFillColor = System.Drawing.Color.Maroon;
             this.nUDItem.UpDownButtonForeColor = System.Drawing.Color.White;
+            this.nUDItem.ValueChanged += new System.EventHandler(this.nUDItem_ValueChanged);
             // 
-            // guna2TextBox1
+            // txtNoteBill
             // 
-            this.guna2TextBox1.BorderRadius = 10;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(34, 475);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "Note";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(323, 42);
-            this.guna2TextBox1.TabIndex = 20;
+            this.txtNoteBill.BorderRadius = 10;
+            this.txtNoteBill.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNoteBill.DefaultText = "";
+            this.txtNoteBill.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtNoteBill.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtNoteBill.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNoteBill.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNoteBill.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNoteBill.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtNoteBill.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNoteBill.Location = new System.Drawing.Point(34, 475);
+            this.txtNoteBill.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNoteBill.Name = "txtNoteBill";
+            this.txtNoteBill.PasswordChar = '\0';
+            this.txtNoteBill.PlaceholderText = "Note";
+            this.txtNoteBill.SelectedText = "";
+            this.txtNoteBill.Size = new System.Drawing.Size(323, 42);
+            this.txtNoteBill.TabIndex = 20;
             // 
             // guna2HtmlLabel5
             // 
@@ -281,7 +278,7 @@
             this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.White;
             this.guna2HtmlLabel5.Location = new System.Drawing.Point(44, 420);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(64, 33);
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(52, 27);
             this.guna2HtmlLabel5.TabIndex = 17;
             this.guna2HtmlLabel5.Text = "Total:";
             // 
@@ -293,7 +290,7 @@
             this.txtTotal.ForeColor = System.Drawing.Color.White;
             this.txtTotal.Location = new System.Drawing.Point(308, 431);
             this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(42, 22);
+            this.txtTotal.Size = new System.Drawing.Size(34, 17);
             this.txtTotal.TabIndex = 14;
             this.txtTotal.Text = "$0.00";
             // 
@@ -318,32 +315,26 @@
             this.dtgvBillCus.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgvBillCus.ColumnHeadersHeight = 40;
             this.dtgvBillCus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dtgvBillCus.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NAME,
-            this.QUANTITY,
-            this.PRICE,
-            this.DELETE});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvBillCus.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvBillCus.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtgvBillCus.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
             this.dtgvBillCus.Location = new System.Drawing.Point(34, 126);
             this.dtgvBillCus.Name = "dtgvBillCus";
-            this.dtgvBillCus.ReadOnly = true;
             this.dtgvBillCus.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvBillCus.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvBillCus.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dtgvBillCus.RowHeadersVisible = false;
             this.dtgvBillCus.RowHeadersWidth = 51;
             this.dtgvBillCus.RowTemplate.Height = 25;
@@ -363,7 +354,7 @@
             this.dtgvBillCus.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dtgvBillCus.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dtgvBillCus.ThemeStyle.HeaderStyle.Height = 40;
-            this.dtgvBillCus.ThemeStyle.ReadOnly = true;
+            this.dtgvBillCus.ThemeStyle.ReadOnly = false;
             this.dtgvBillCus.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dtgvBillCus.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgvBillCus.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -371,40 +362,7 @@
             this.dtgvBillCus.ThemeStyle.RowsStyle.Height = 25;
             this.dtgvBillCus.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
             this.dtgvBillCus.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            // 
-            // NAME
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.NAME.DefaultCellStyle = dataGridViewCellStyle3;
-            this.NAME.HeaderText = "NAME";
-            this.NAME.MinimumWidth = 6;
-            this.NAME.Name = "NAME";
-            this.NAME.ReadOnly = true;
-            // 
-            // QUANTITY
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.QUANTITY.DefaultCellStyle = dataGridViewCellStyle4;
-            this.QUANTITY.HeaderText = "QTY";
-            this.QUANTITY.MinimumWidth = 6;
-            this.QUANTITY.Name = "QUANTITY";
-            this.QUANTITY.ReadOnly = true;
-            // 
-            // PRICE
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.PRICE.DefaultCellStyle = dataGridViewCellStyle5;
-            this.PRICE.HeaderText = "PRICE";
-            this.PRICE.MinimumWidth = 6;
-            this.PRICE.Name = "PRICE";
-            this.PRICE.ReadOnly = true;
-            // 
-            // DELETE
-            // 
-            this.DELETE.HeaderText = "DEL";
-            this.DELETE.MinimumWidth = 6;
-            this.DELETE.Name = "DELETE";
-            this.DELETE.ReadOnly = true;
+            this.dtgvBillCus.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvBillCus_CellClick);
             // 
             // btnSave
             // 
@@ -425,6 +383,7 @@
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Save";
             this.btnSave.UseTransparentBackground = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtTable
             // 
@@ -433,7 +392,7 @@
             this.txtTable.ForeColor = System.Drawing.Color.White;
             this.txtTable.Location = new System.Drawing.Point(34, 16);
             this.txtTable.Name = "txtTable";
-            this.txtTable.Size = new System.Drawing.Size(109, 43);
+            this.txtTable.Size = new System.Drawing.Size(88, 34);
             this.txtTable.TabIndex = 3;
             this.txtTable.Text = "TABLE 1";
             // 
@@ -466,6 +425,35 @@
             this.txtSearch.SelectedText = "";
             this.txtSearch.Size = new System.Drawing.Size(240, 38);
             this.txtSearch.TabIndex = 51;
+            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMenu.Animated = true;
+            this.btnMenu.AutoRoundedCorners = true;
+            this.btnMenu.BackColor = System.Drawing.Color.Transparent;
+            this.btnMenu.BorderRadius = 25;
+            this.btnMenu.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnMenu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnMenu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnMenu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnMenu.FillColor = System.Drawing.Color.Transparent;
+            this.btnMenu.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.btnMenu.ForeColor = System.Drawing.Color.White;
+            this.btnMenu.HoverState.BorderColor = System.Drawing.Color.White;
+            this.btnMenu.HoverState.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.btnMenu.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnMenu.HoverState.ForeColor = System.Drawing.Color.Maroon;
+            this.btnMenu.Location = new System.Drawing.Point(500, 123);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(148, 52);
+            this.btnMenu.TabIndex = 56;
+            this.btnMenu.Text = "MENU";
+            this.btnMenu.UseTransparentBackground = true;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click_1);
             // 
             // fStaff_S
             // 
@@ -473,6 +461,7 @@
             this.BackgroundImage = global::KTPOS.Properties.Resources.bground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1418, 927);
+            this.Controls.Add(this.btnMenu);
             this.Controls.Add(btnBack);
             this.Controls.Add(this.Filter);
             this.Controls.Add(this.FlowMenu);
@@ -502,18 +491,16 @@
         private System.Windows.Forms.FlowLayoutPanel FlowMenu;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel PanelBillCus;
         private Guna.UI2.WinForms.Guna2NumericUpDown nUDItem;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox txtNoteBill;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private Guna.UI2.WinForms.Guna2HtmlLabel txtTotal;
-        private Guna.UI2.WinForms.Guna2DataGridView dtgvBillCus;
         private Guna.UI2.WinForms.Guna2Button btnSave;
-        private Guna.UI2.WinForms.Guna2HtmlLabel txtTable;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbCancel;
         private Guna.UI2.WinForms.Guna2TextBox txtPeople;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QUANTITY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PRICE;
-        private System.Windows.Forms.DataGridViewButtonColumn DELETE;
+        public Guna.UI2.WinForms.Guna2HtmlLabel txtTable;
+        public Guna.UI2.WinForms.Guna2DataGridView dtgvBillCus;
+        private Guna.UI2.WinForms.Guna2DataGridViewStyler guna2DataGridViewStyler1;
+        private Guna.UI2.WinForms.Guna2Button btnMenu;
     }
 }

@@ -122,5 +122,9 @@
   <ItemGroup>
     <None Include="Resources\cocktail.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Image Items\" />
+    <Folder Include="Note\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
